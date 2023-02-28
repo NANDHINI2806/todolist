@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking the font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;700&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!-- for mobile phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking the icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- linking the css -->
+    <link rel="stylesheet" href="./commons.css">
+    <link rel="stylesheet" href="./index.css">
+    <!-- title -->
+    <title>card-page</title>
+</head>
+<body>
+    <div class="page-wrapper">
+         <!-- header -->
+         <header class="head-nav">
+            <!-- nav-bar -->
+            <nav>
+                <div class="left">
+                    <i class="go-back fa-solid fa-arrow-left"></i>
+                    <h1>pocket <span>notes</span> </h1>
+                </div>
+                
+                <div class="button-area">
+                    <button class="delete-edit">delete</button>
+                    <button class="edit">Edit</button>
+                </div>
+            </nav>
+        </header>
+        <!-- main area -->
+        <main class="card-content-area">
+        </main>
+        <!-- overlay -->
+        <div class="overlay"></div>
+        <!-- sidebar -->
+        <div class="side-bar">
+            <!-- head portion of the side nav bar -->
+            <nav class="header">
+                <div class="new-note">edit note</div>
+                <i class="sidebar-close fa-solid fa-x"></i>
+            </nav>
+            <!-- form given in the side-bar -->
+            <form class="form-edit" action="#">
+                <input name="head" class="edit-notes-title" type="text" placeholder="Notes Title">
+                <input name="imageUrl" class="edit-notes-image" type="text" placeholder="Add Image URL">
+                <textarea class="edit-notes-content" name="content" placeholder="Add Content Here" cols="30" rows="10"></textarea>
+            </form>
+            <!-- footer of the side bar -->
+            <div class="side-bar-foot">
+                <div class="select-color">
+                    <div class="color-selector-edit purple"><i class="purpleTick fa-solid fa-check"></i></div>
+                    <div class="color-selector-edit grey_white"><i class="grey_whiteTick fa-solid fa-check"></i></div>
+                    <div class="color-selector-edit yellow"><i class="yellowTick fa-solid fa-check"></i></div>
+                    <div class="color-selector-edit limegreen"><i class="limegreenTick fa-solid fa-check"></i></div>
+                    <div class="color-selector-edit peach"><i class="peachTick fa-solid fa-check"></i></div>
+                </div>
+                <div class="add-note">
+                    <button class="edit-note-button">Edit</button>
+                </div>
+            </div>
+        </div>
+        <!-- popup box -->
+        <div class="pop-up">
+            <nav class="header">
+                <div class="pop-up-header">confirm delete</div>
+                <i class="pop-up-close fa-solid fa-x"></i>
+            </nav>
+            <div class="context-message">
+                Are you sure ou want to delete this note?
+            </div>
+            <div class="delete-one">
+                <button class="delete-one-button">yes, delete</button>
+            </div>
+        </div>
+        <!--accidental popup box -->
+        <div class="pop-up-accidental">
+            <nav class="header">
+                <div class="pop-up-header">confirm</div>
+                <i class="pop-up-accidental-close fa-solid fa-x"></i>
+            </nav>
+            <div class="context-message">
+                Seems like you are in the middle of editing/creating the content. Do you want to leave?
+            </div>
+            <div class="delete">
+                <button class="close-edit-single-button">yes, close</button>
+            </div>
+        </div>
+    </div>
+     <!-- linking the jquery js -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+     <script src="./index.js"></script>
+     <script src="./card_page.js"></script>
+</body>
+</html>

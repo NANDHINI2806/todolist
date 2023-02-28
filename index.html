@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- linking the font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@100;200;300;400;500;700&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!-- for mobile phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking the icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- linking the css -->
+    <link rel="stylesheet" href="./commons.css">
+    <link rel="stylesheet" href="./index.css">
+    <!-- title -->
+    <title>Notes</title>
+</head>
+<body>
+    <!-- page-wrapper -->
+    <div class="page-wrapper">
+        <!-- header -->
+        <header class="head-nav">
+            <!-- nav-bar -->
+            <nav>
+                <h1>pocket <span>notes</span> </h1>
+                <div class="button-area">
+                    <button class="delete-all">delete all</button>
+                    <button class="new">new</button>
+                </div>
+            </nav>
+        </header>
+        <!-- notes area -->
+        <main class="notes-area">
+            <!-- section to display when no notes available -->
+            <div class="on-all-delete">
+                <i class="fa-solid fa-cube"></i>
+                <div class="notes-add">Notes you add appear here</div>    
+            </div>
+            <!-- notes region -->
+        </main>
+        <div class="load-more">
+            <button class="load-more-button">Load more</button>
+        </div>
+        <!-- overlay -->
+        <div class="overlay"></div>
+        <!-- sidebar -->
+        <div class="side-bar">
+            <!-- head portion of the side nav bar -->
+            <nav class="header">
+                <div class="new-note">new note</div>
+                <i class="sidebar-close fa-solid fa-x"></i>
+            </nav>
+            <!-- form given in the side-bar -->
+            <form action="#">
+                <input name="head" class="notes-title" type="text" placeholder="Notes Title **Required**" value="">
+                <input name="imageUrl" type="text" placeholder="Add Image URL" value="">
+                <textarea name="content" class="notes-content" placeholder="Add Content Here  **Required**" cols="30" rows="10"></textarea>
+            </form>
+            <!-- footer of the side bar -->
+            <div class="side-bar-foot">
+                <div class="select-color">
+                    <div class="color-selector purple"><i class="purpleTick fa-solid fa-check"></i></div>
+                    <div class="color-selector grey_white"><i class="grey_whiteTick fa-solid fa-check"></i></div>
+                    <div class="color-selector yellow"><i class="yellowTick fa-solid fa-check"></i></div>
+                    <div class="color-selector limegreen"><i class="limegreenTick fa-solid fa-check"></i></div>
+                    <div class="color-selector peach"><i class="peachTick fa-solid fa-check"></i></div>
+                </div>
+                <div class="add-note">
+                    <button disabled class="add-note-button">Add</button>
+                </div>
+            </div>
+        </div>
+        <!-- popup box -->
+        <div class="pop-up">
+            <nav class="header">
+                <div class="pop-up-header">confirm delete</div>
+                <i class="pop-up-close fa-solid fa-x"></i>
+            </nav>
+            <div class="context-message">
+                Are you sure ou want to delete all notes?
+            </div>
+            <div class="delete">
+                <button class="delete-button">yes, delete</button>
+            </div>
+        </div>
+        <!--accidental popup box -->
+        <div class="pop-up-accidental">
+            <nav class="header">
+                <div class="pop-up-header">confirm</div>
+                <i class="pop-up-accidental-close fa-solid fa-x"></i>
+            </nav>
+            <div class="context-message">
+                Seems like you are in the middle of editing/creating the content. Do you want to leave?
+            </div>
+            <div class="delete">
+                <button class="close-edit-button">yes, close</button>
+            </div>
+        </div>
+    </div>
+    <!-- linking the jquery js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="."></script>
+</body>
+</html>

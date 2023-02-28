@@ -1,0 +1,228 @@
+@import '_variables';
+
+
+// start : sidebar
+.side-bar{
+    padding: 3rem;
+    height: 100vh;
+    width: 40%;
+    background-color: $background-color;
+    color: $heading-font-color;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    // display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateX(2000px);
+    transition: all;
+    transition-duration: 1s;
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: $nav-background-color;
+        margin-bottom: 2rem;
+        .new-note{
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        i{
+            color: $notes-you-add-font-color;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 566px) {
+            font-size: 0.8rem;
+            padding: 0.8rem;
+        }
+    }
+    form{
+        color: $notes-you-add-font-color;
+        height: 82%;
+        input{
+            margin-bottom: 1.5rem;
+            width: 100%;
+            background-color: transparent;
+            border: 0;
+            padding: 0.5rem 0;
+            color: $heading-font-color;
+        }
+        textarea{
+            width: 100%;
+            // height: inherit;
+            padding: 0.5rem 0;
+            border: 0;
+            margin-bottom: 1.5rem;
+            background-color: transparent;
+            color: $heading-font-color;
+        }
+        .notes-title, .edit-notes-title{
+            font-size: 2rem;
+            @media only screen and (max-width: 566px) {
+                font-size: 1rem;
+            }
+        }
+    }
+    .side-bar-foot{
+        display: flex;
+        justify-content: space-between;  
+        align-items: center;      
+        .select-color{
+            display: flex;
+            align-items: center;
+            .color-selector,.color-selector-edit{
+                margin-right: 1rem;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                color: $background-color;
+                font-size: 1.5rem;
+                cursor: pointer;
+                i{
+                    display: none;
+                    @media only screen and (max-width: 566px) {
+                        font-size: 0.8rem;
+                    }
+                }
+                @media only screen and (max-width: 566px) {
+                    height: 30px;
+                    width: 30px;
+                    margin-right: 0.5rem;
+                }
+                
+            }
+            .purple{
+                background-color: $card-color-purple;
+            }
+            .grey_white{
+                background-color: $card-color-grey;
+            }
+            .yellow{
+                background-color: $card-color-yellow;
+            }
+            .limegreen{
+                background-color: $card-color-lime-green;
+            }
+            .peach{
+                background-color: $card-color-peach;
+            }
+        }
+        .add-note-button,.edit-note-button{
+            border-radius: 25px;
+            padding: 0.5rem 2rem;
+            color: $heading-font-color;
+            border: 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            background-color: $new-button-color;
+            @media only screen and (max-width: 566px) {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        .add-note button:disabled{
+            opacity: 0.5;
+        }
+    }
+    @media only screen and (max-width: 1100px) {
+        width: 80%;
+        padding: 1.5rem;
+    }
+    
+}
+
+// end : sidebar
+
+// start : pop-up
+
+.pop-up,.pop-up-accidental{
+    display: none;
+    position: fixed;
+    top: 50%;
+    // left: calc(67.5% - 38rem);
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width : 38rem;
+    padding: 0.8rem;
+    z-index: 3;
+    background-color: $background-color;
+    color: $heading-font-color;
+    text-align: center;
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: $nav-background-color;
+        margin-bottom: 2rem;
+        .pop-up-header{
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        i{
+            color: $notes-you-add-font-color;
+            cursor: pointer;
+        }
+    }
+    .context-message{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .delete-button,.delete-one-button,.close-edit-button,.close-edit-single-button{
+        border-radius: 25px;
+        padding: 0.5rem 2rem;
+        margin-bottom: 2rem;
+        color: $heading-font-color;
+        border: 0;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: $new-button-color;
+        @media only screen and (max-width: 768px) {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+    }
+    @media only screen and (max-width: 1387px) {
+        width: 35rem;
+   }
+    @media only screen and (max-width: 1250px) {
+        width: 30rem;
+    }
+    @media only screen and (max-width: 1024px) {
+        width: 25rem;
+    }
+    @media only screen and (max-width: 768px) {
+        width: 20rem;
+    }
+    @media only screen and (max-width: 427px) {
+        width: 15rem;
+    }
+}
+
+// end : pop-up
+
+// start : overlay-effect
+
+.overlay{
+    position: fixed; 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(10,28,45,0.7); 
+    z-index: 2; 
+    cursor: pointer; 
+}
+
+// end : overlay-effect

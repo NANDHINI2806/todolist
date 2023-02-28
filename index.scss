@@ -1,0 +1,255 @@
+@import '_variables';
+
+// normalise the css
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// setting the background
+
+body{
+    background-color: $background-color;
+    font-family: $page-font-family;
+}
+
+// start : head-nav
+
+.head-nav{
+    
+    padding: 2rem;
+    text-transform: capitalize;
+    background-color: $nav-background-color;
+    color: $heading-font-color;
+    position: sticky;
+    top: 0;
+    
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+            display: flex;
+            align-items: center;
+            i{
+                margin-right: 2rem;
+                font-size: 2rem;
+                cursor: pointer;
+                @media only screen and (max-width: 427px) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        h1{
+            font-family: $logo-font-family;
+            font-weight: 400;
+            letter-spacing: 1px;
+            span{
+                font-weight: bold;
+            }  
+            @media only screen and (max-width: 427px) {
+                font-size: 1.2rem;
+            }   
+        }
+        .button-area{
+            
+            .new ,.delete-all ,.edit ,.delete-edit{
+                border-radius: 25px;
+                padding: 0.5rem 2rem;
+                color: $heading-font-color;
+                border: 0;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                cursor: pointer;
+                @media only screen and (max-width: 766px) {
+                    font-size: 0.8rem;
+                    padding: 0.5rem 1rem;
+                }
+                @media only screen and (max-width: 427px) {
+                    font-size: 0.5rem;
+                    padding: 0.5rem 1rem;
+                }
+            }
+            .new ,.edit{
+                background-color: $new-button-color;
+            }
+            .delete-all,.delete-edit{
+                background-color: $delete-button-color;
+                margin-right: 1rem;
+                @media only screen and (max-width: 427px) {
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    } 
+    @media only screen and (max-width: 427px) {
+        padding: 1rem;
+    }   
+}
+
+// end : head-nav
+
+// start : notes-area
+
+.notes-area{
+    display: flex;
+    flex-wrap: wrap;
+    // margin: 3rem 10rem;
+    width: 80%;
+    margin: 3rem auto;
+    // justify-content: space-evenly;
+    // on all delete
+    .on-all-delete{
+        margin: 5rem auto;
+        text-align: center;
+        display: none;
+        i{
+            color: $heading-font-color;
+            font-size: 12rem;
+            @media only screen and (max-width: 1024px) {
+                font-size: 10rem;
+            }
+            @media only screen and (max-width: 768px) {
+                font-size: 8rem;
+            }
+            @media only screen and (max-width: 427px) {
+                font-size: 5rem;
+            }
+        }
+        .notes-add{
+            color: $notes-you-add-font-color;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            letter-spacing: 1px;
+        }
+    }
+    .notes-card{
+        padding: 1rem;
+        margin: 1rem;
+        width: calc((100% - 128px)/4);
+        border-radius: 5px;
+        height: 25rem;
+        display: flex;
+        flex-direction: column;
+        color: $card-font-color;
+        background-color: $card-color-lime-green;
+        cursor: pointer;
+        h2{
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 400;
+            @media only screen and (max-width: 920px) {
+                font-size: 1.5rem;
+            }
+        }
+        .date{
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+        .note-image-container{
+            margin-bottom: 1rem;
+            img{
+                height: 10rem;
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+        .note-content{
+            margin-bottom: 1rem;
+            // height: 4rem;
+            overflow: hidden;
+            font-weight: 300;
+            word-spacing: 1px;
+            line-height: 22px;
+        }
+        //large laptop start at
+        @media only screen and (max-width: 1440px) {
+            width : calc((100% - 96px)/3);
+        }
+        // small laptop start at
+        @media only screen and (max-width: 1023px) {
+            width : calc((100% - 64px)/2);
+        }
+        // tablet starts at
+        @media only screen and (max-width: 767px) {
+           width: 100%;
+           height: 26rem;
+        }
+    }
+    @media only screen and (max-width: 1440px) {
+        width: 90%;
+    }
+}
+
+.load-more{
+    display: none;
+    width: 100%;
+    margin: 1rem;
+    text-align: center;
+    .load-more-button{
+        border-radius: 25px;
+        padding: 1rem 1.5rem;
+        color: $heading-font-color;
+        border: 0;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: $new-button-color;
+    }
+}
+// end : notes-area
+
+
+// start : card-page
+.card-content-area{
+    width: 55%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    color: $heading-font-color;
+    .color-of-card{
+        padding: 0.5rem 0;
+    }
+    .card-color{
+        margin-right: 1.5rem;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: $card-color-yellow;
+    }
+    .content{
+        width: 100%;
+        h1{
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            @media only screen and (max-width: 768px) {
+                font-size: 1.5rem;
+            }
+        }
+        .date{
+            color: $notes-you-add-font-color;
+            margin-bottom: 2rem;
+        }
+        .image{
+            width: 100%;
+            margin-bottom: 2rem;
+            img{
+                height: 24rem;
+                object-fit: cover;
+                border-radius: 20px;
+                width: inherit;
+            }
+        }
+        .context{
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+            line-height: 2rem;
+        }
+    }
+    @media only screen and (max-width: 1250px) {
+        width: 80%;
+        flex-direction: column;
+    }
+}
